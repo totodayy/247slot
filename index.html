@@ -1,8 +1,7 @@
-
-	<html>
+<html>
 
 <head>
-	
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -71,21 +70,40 @@
 			flex-direction: column;
 		}
 
-		.content_body.bg1 {background: url('bg1.jpg') no-repeat center;background-size: cover;}
+		.content_body.bg1 {
+			background: url('./bg1.jpg') no-repeat center;
+			background-size: cover;
+		}
 
-		.content_body.bg2 {background: url('bg2.jpg') no-repeat center;background-size: cover;}
-		
-		.content_body.bg3 {background: url('bg3.jpg') no-repeat center;background-size: cover;}
-		
-		.content_body.bg4 {background: url('./bg4.jpg') no-repeat center;background-size: cover;}
+		.content_body.bg2 {
+			background: url('./bg2.jpg') no-repeat center;
+			background-size: cover;
+		}
 
-		.content_body.bg_ilwol {background: url('ilwol_login_bg.gif') no-repeat center;background-size: cover;}
-		
-		.content_body.bg_pokehon {background: url('pkehonbg.png') no-repeat center;background-size: cover;}
-		
-		.content_body.bg_3bet {background: url('bg_3bet.jpg') no-repeat center;background-size: cover;}
-		
-		.content_body.bg_sero {background: url('sero/sero_lifetime_domain_bg.jpg') no-repeat center;background-size: cover;}
+		.content_body.bg3 {
+			background: url('./bg3.jpg') no-repeat center;
+			background-size: cover;
+		}
+
+		.content_body.bg_ilwol {
+			background: url('ilwol_login_bg.gif') no-repeat center;
+			background-size: cover;
+		}
+
+		.content_body.bg_pokehon {
+			background: url('pkehonbg.png') no-repeat center;
+			background-size: cover;
+		}
+
+		.content_body.bg_3bet {
+			background: url('bg_3bet.jpg') no-repeat center;
+			background-size: cover;
+		}
+
+		.content_body.bg_sero {
+			background: url('sero/sero_lifetime_domain_bg.jpg') no-repeat center;
+			background-size: cover;
+		}
 
 
 
@@ -305,7 +323,7 @@
 </head>
 
 <body>
-	<div class="content_body bg4">
+	<div class="content_body">
 		<div class="box">
 			<div class="logo" id="logo"></div>
 			<div class="link">
@@ -313,7 +331,9 @@
 				</ul>
 			</div>
 			<pre class="footer" id="description">
-				<h3>위 도메인 클릭 시 사이트로 이동합니다.</h3><br>사이트 주소를 모르시거나<br>유해 차단 및 접속 에러 시 위 주소로 접속하여 주시기 바랍니다.<br><br><h3>12년 무사고 서비스 운영!</h3>247 SLOT이 함께 하겠습니다.</pre>
+				<h3>위 도메인 클릭 시 사이트로 이동합니다.</h3><br>사이트 주소를 모르시거나<br>유해 차단 및 접속 에러 시 위 주소로 접속하여 주시기 바랍니다.<br><br>
+				<h3>12년 무사고 서비스 운영!</h3>247 SLOT이 함께 하겠습니다.
+			</pre>
 			<button class="bookmark" onclick="bookmark();"> 북마크</button>
 		</div>
 		<div class="social">
@@ -325,7 +345,7 @@
 		</div>
 	</div>
 	<script>
-		var info = {"agent_site_seq": 3, "logo_url": "./inc/logo.png", "color": "#FFFFFF", "view_domains": "97", "domains": ["https://247슬롯.com"], "telegram": "", "kakao": "", "twitter": ""};
+		var info = { "agent_site_seq": 3, "logo_url": "./inc/logo.png", "color": "#FFFFFF", "view_domains": "97", "domains": ["https://247슬롯.com"], "telegram": "", "kakao": "", "twitter": "" };
 		var url = " "; //u can add ur url
 		var pageName = "Lifetime domain";
 
@@ -343,8 +363,8 @@
 			window.open("https://twitter.com/" + $('#twitter').attr('link-data'));
 		}
 
-		function go_kakao(){
-			window.open( $('#kakao').attr( 'link-data' ) );
+		function go_kakao() {
+			window.open($('#kakao').attr('link-data'));
 		}
 
 		//color
@@ -374,10 +394,9 @@
 			var data = info.domains[i];
 			domain_info = new URL(data);
 
-			htmlStr ="";
+			htmlStr = "";
 			target_url = domain_info.protocol + '//' + punycode.ToUnicode(domain_info.hostname);
-			if( info.agent_site_seq == 71 )
-			{
+			if (info.agent_site_seq == 71) {
 				target_url = '지금 바로 입장하기';
 			}
 			htmlStr += "<li>";
@@ -393,33 +412,38 @@
 		}
 
 		var rndInt = randomIntFromInterval(1, 3);
-		if( info.agent_site_seq == 63 )
-		{
+		if (info.agent_site_seq == 63) {
 			$('.content_body').addClass('bg_ilwol');
 		}
-		else if( info.agent_site_seq == 71 )
-		{
+		else if (info.agent_site_seq == 71) {
 			$('.content_body').addClass('bg_pokehon');
 			$('#telegram').text('본사 텔레 연결');
 			$('#kakao').text('본사 카톡 연결');
 		}
-		else if( info.agent_site_seq == 89 )
-		{
+		else if (info.agent_site_seq == 89) {
 			$('.content_body').addClass('bg_3bet');
 		}
-		else if( info.agent_site_seq == 123 )
-		{
+		else if (info.agent_site_seq == 123) {
 			$('.content_body').addClass('bg_sero');
 		}
-		else
-		{
+		else {
 			$('.content_body').addClass('bg' + rndInt);
 		}
 	</script>
 
+	<script>
+		window.addEventListener('DOMContentLoaded', function () {
+			const backgrounds = ['bg1', 'bg2', 'bg3'];
+			const randomIndex = Math.floor(Math.random() * backgrounds.length);
+			const selectedClass = backgrounds[randomIndex];
 
+			const contentBody = document.querySelector('.content_body');
+			if (contentBody) {
+				contentBody.classList.add(selectedClass);
+			}
+		});
+	</script>
 
 </body>
 
 </html>
-
